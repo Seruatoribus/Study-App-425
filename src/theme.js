@@ -13,11 +13,14 @@ export default theme => ({
     position: "relative",
     display: "flex"
   },
+  card: {
+    minWidth: 500,
+  },
   flex: {
     flex: 1
   },
   appBar: {
-    background: "linear-gradient(45deg, #3366cc 60%, #ccffff 99%)",
+    background: "linear-gradient(45deg, #3366cc 30%, #ccffff 99%)",
     zIndex: theme.zIndex.drawer + 1
   },
   drawerPaper: {
@@ -34,5 +37,5 @@ export default theme => ({
     marginLeft: -12,
     marginRight: 20
   },
-  toolbar: theme.mixins.toolbar
+  toolbar: theme.mixins.toolbar,
 });

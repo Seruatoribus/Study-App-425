@@ -3,7 +3,9 @@
 */
 
 import ExampleContent from "./Main/ExampleContent";
+import Flashcard from "./StudyTools/Usage/Flashcard";
 import React from "react";
+import requireAuth from "/src/utils/requireAuth.js";
 import { Route } from "react-router-dom";
 
 class Main extends React.Component {
@@ -13,10 +15,16 @@ class Main extends React.Component {
       <div className={classes.root}>
         <Route
           exact
-          path="/"
-          // An example of passing props to a component as it is rendered by the router
+          path="/" // An example of passing props to a component as it is rendered by the router
           render={() => <ExampleContent classes={classes} />}
+          onEnter={requireAuth} //Require Auth not coded
         />
+        <Route path="/flashcards"
+          render={() => <Flashcard classes={classes}/>}
+        />
+        <Route path="/login" />
+        <Route path="/logout" />
+        <Route path="/checkout" />
       </div>
     );
   }

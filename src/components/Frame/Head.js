@@ -5,6 +5,9 @@ import Typography from "material-ui/Typography";
 import IconButton from "material-ui/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Menu, { MenuItem } from "material-ui/Menu";
+import { Link } from "react-router-dom";
+import ButtonBase from "material-ui/ButtonBase"
+import Button from 'material-ui/Button';
 
 class Head extends React.Component {
   state = {
@@ -24,6 +27,8 @@ class Head extends React.Component {
     this.setState({ anchorEl: null });
   };
 
+  
+
   render() {
     const { classes } = this.props;
     const { auth, anchorEl } = this.state;
@@ -33,13 +38,13 @@ class Head extends React.Component {
       <div>
         <AppBar className={this.props.className}>
           <Toolbar>
-            <Typography
-              variant="title"
-              color="inherit"
-              className={classes.flex}
-            >
-              Study App and more
-            </Typography>
+              <IconButton variant="title"
+                color="inherit"
+                className={classes.flex}
+                component={Link}
+                to='/'>
+                  Logo Goes Here
+              </IconButton>
             {auth && (
               <div>
                 <IconButton

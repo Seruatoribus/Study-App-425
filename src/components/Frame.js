@@ -1,13 +1,13 @@
 /*
   This file composes the central components of our application into a Frame that will dynamically render the webpage.
 */
-
+import ExampleContent from "./Main/ExampleContent";
 import Head from "./Frame/Head";
 import Main from "./Main";
 import NavBar from "./Frame/NavBar";
 import PropTypes from "prop-types";
 import React from "react";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import theme from "/src/theme";
 import { withStyles } from "material-ui/styles";
 
@@ -20,7 +20,7 @@ class Frame extends React.Component {
     super(); // Calls the constructor for the parent class (React.Component)
     this.state = {
       //Sets state of the Frame component to have no active user.
-      user: null
+      username: null
     };
   }
 
@@ -36,7 +36,7 @@ class Frame extends React.Component {
         <NavBar className={classes.drawerPaper} classes={classes} />
         {/* This component is used to hold Routes, but in this case We've encapsulated routing into the "Main" component */}
         <Switch>
-          <Main classes={classes} />
+          <Main classes={classes}/>
         </Switch>
       </div>
     );
