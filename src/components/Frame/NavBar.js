@@ -9,20 +9,21 @@ import { Link } from "react-router-dom";
 
 export default class NavBar extends React.Component {
   render() {
+    const { classes } = this.props;
     return (
       <Drawer
         variant="permanent"
         classes={{
-          paper: this.props.classes.drawerPaper
+          paper: classes.drawerPaper
         }}
       >
-        <div className={this.props.classes.toolbar} />
+        <div className={classes.toolbar} />
         <List>
           <ListItem button component={Link} to="/discover">
-            <ListItemIcon>
-              <ShareIcon />
+            <ListItemIcon >
+              <ShareIcon/>
             </ListItemIcon>
-            <Typography variant="title">Discover</Typography>
+            <Typography align="left" className={classes.flex} variant="title">Discover</Typography>
           </ListItem>
           <ListItem button component={Link} to="/flashcards">
             <ListItemIcon>

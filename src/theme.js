@@ -1,6 +1,7 @@
 /*
   This file contains CSS classes and parameters to be injected into our frame using withStyles()
 */
+import blue from 'material-ui/colors/purple';
 
 const drawerWidth = 200; // Drawer Width Const is applied in styles.drawerPaper.width
 
@@ -15,6 +16,12 @@ export default theme => ({
   },
   card: {
     minWidth: 500,
+    minHeight: 300,
+  },
+  cardButton: {
+    flex: 1,
+    backgroundColor: '#3366cc',
+    color: '#ffffff'
   },
   flex: {
     flex: 1
@@ -37,5 +44,5 @@ export default theme => ({
     marginLeft: -12,
     marginRight: 20
   },
-  toolbar: theme.mixins.toolbar,
+  toolbar: theme.mixins.toolbar
 });
