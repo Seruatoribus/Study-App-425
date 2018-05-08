@@ -26,6 +26,9 @@ export default theme => ({
   flex: {
     flex: 1
   },
+  logo:{
+    width: drawerWidth
+  },
   appBar: {
     background: "linear-gradient(45deg, #3366cc 30%, #ccffff 99%)",
     zIndex: theme.zIndex.drawer + 1
@@ -44,5 +47,11 @@ export default theme => ({
     marginLeft: -12,
     marginRight: 20
   },
-  toolbar: theme.mixins.toolbar
+  toolbar: theme.mixins.toolbar,
+  paper: {
+    flexGrow: 1,
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
 });

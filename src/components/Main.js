@@ -1,7 +1,7 @@
 /*
   This file acts as the central routing for the content area of the page.
 */
-
+import FlashcardLanding from "./StudyTools/Landings/FlashcardLanding"
 import ExampleContent from "./Main/ExampleContent";
 import Flashcard from "./StudyTools/Usage/Flashcard";
 import React from "react";
@@ -16,7 +16,7 @@ class Main extends React.Component {
         <Route
           exact
           path="/" // An example of passing props to a component as it is rendered by the router
-          render={() => <ExampleContent classes={classes} />}
+          render={() => <FlashcardLanding classes={classes} />}
           onEnter={requireAuth} //Require Auth not coded
         />
         <Route path="/flashcards"

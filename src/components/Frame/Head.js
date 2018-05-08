@@ -8,6 +8,7 @@ import Menu, { MenuItem } from "material-ui/Menu";
 import { Link } from "react-router-dom";
 import ButtonBase from "material-ui/ButtonBase"
 import Button from 'material-ui/Button';
+import Grid from 'material-ui/Grid';
 
 class Head extends React.Component {
   state = {
@@ -38,42 +39,46 @@ class Head extends React.Component {
       <div>
         <AppBar className={this.props.className}>
           <Toolbar>
-              <IconButton variant="title"
-                color="inherit"
-                className={classes.flex}
-                component={Link}
-                to='/'>
-                  Logo Goes Here
-              </IconButton>
-            {auth && (
+            <IconButton variant="title"
+              color="inherit"
+              className={classes.logo}
+              component={Link}
+              to='/'
+              >
+                StudyApp
+            </IconButton>
+            <Typography variant="display1" align="center" className={classes.flex}>
+              this.props.title
+            </Typography>
+          {auth && (
               <div>
-                <IconButton
-                  aria-owns={open ? "menu-appbar" : null}
-                  aria-haspopup="true"
-                  onClick={this.handleMenu}
-                  color="inherit"
-                >
-                  <AccountCircle />
-                </IconButton>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right"
-                  }}
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right"
-                  }}
-                  open={open}
-                  onClose={this.handleClose}
-                >
-                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                </Menu>
-              </div>
-            )}
+              <IconButton
+                aria-owns={open ? "menu-appbar" : null}
+                aria-haspopup="true"
+                onClick={this.handleMenu}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right"
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right"
+                }}
+                open={open}
+                onClose={this.handleClose}
+              >
+                <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                <MenuItem onClick={this.handleClose}>My account</MenuItem>
+              </Menu>
+            </div>
+          )}
           </Toolbar>
         </AppBar>
       </div>
