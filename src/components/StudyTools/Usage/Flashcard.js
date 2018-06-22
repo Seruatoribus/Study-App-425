@@ -14,20 +14,20 @@ export default class Flashcard extends React.Component {
     super(); // Calls the constructor for the parent class (React.Component)
     this.state = {
       //Sets state of the Frame component to have no active user.
-      front: true,
+      front: true
     };
   }
 
   toggleSide = () => {
-    this.setState({ front: (this.state.front ? false : true) });
+    this.setState({ front: this.state.front ? false : true });
     console.log("Flipped");
-  }
-  
+  };
+
   render() {
     const { classes } = this.props;
     return (
       <main className={classes.content}>
-        <div className={classes.toolbar} />
+        <div className={classes.toolbar} margin-top="-100px" />
         <Card raised className={classes.card}>
           <CardContent>
             <Typography variant="display2" align="center">
@@ -37,19 +37,33 @@ export default class Flashcard extends React.Component {
             <br />
             <Typography variant="display1" align="center">
               The state value is displayed above
-              {this.state.front ? this.props.frontContent : this.props.backContent}
+              {this.state.front
+                ? this.props.frontContent
+                : this.props.backContent}
             </Typography>
           </CardContent>
           <br />
           <CardActions className={classes.cardButtons}>
-            <Button variant="raised" size="large" className={classes.cardButton}>
+            <Button
+              variant="raised"
+              size="large"
+              className={classes.cardButton}
+            >
               Previous
             </Button>
-            <Button variant="raised" size="large" className={classes.cardButton} 
-              onClick={this.toggleSide}>
+            <Button
+              variant="raised"
+              size="large"
+              className={classes.cardButton}
+              onClick={this.toggleSide}
+            >
               Flip
             </Button>
-            <Button variant="raised" size="large" className={classes.cardButton}>
+            <Button
+              variant="raised"
+              size="large"
+              className={classes.cardButton}
+            >
               Next
             </Button>
           </CardActions>

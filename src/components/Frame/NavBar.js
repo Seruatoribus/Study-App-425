@@ -5,6 +5,7 @@ import Typography from "material-ui/Typography";
 import Divider from "material-ui/Divider";
 import ShareIcon from "@material-ui/icons/Share";
 import AssignIcon from "@material-ui/icons/Assignment";
+import AssessIcon from "@material-ui/icons/Assessment";
 import { Link } from "react-router-dom";
 
 export default class NavBar extends React.Component {
@@ -20,10 +21,12 @@ export default class NavBar extends React.Component {
         <div className={classes.toolbar} />
         <List>
           <ListItem button component={Link} to="/discover">
-            <ListItemIcon >
-              <ShareIcon/>
+            <ListItemIcon>
+              <ShareIcon />
             </ListItemIcon>
-            <Typography align="left" className={classes.flex} variant="title">Discover</Typography>
+            <Typography align="left" className={classes.flex} variant="title">
+              Discover
+            </Typography>
           </ListItem>
           <ListItem button component={Link} to="/flashcards">
             <ListItemIcon>
@@ -31,8 +34,11 @@ export default class NavBar extends React.Component {
             </ListItemIcon>
             <Typography variant="title">Flashcards</Typography>
           </ListItem>
-          <ListItem button>
-            <Typography variant="button">Practice</Typography>
+          <ListItem button component={Link} to="/practiceQ">
+            <ListItemIcon>
+              <AssessIcon />
+            </ListItemIcon>
+            <Typography variant="title">Practice</Typography>
           </ListItem>
         </List>
         <Divider />
